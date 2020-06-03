@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
         {
             Pos.X += Dir.X;
             if (Pos.X < 0) Pos.X = Game.Width + Size.Width;
-            int y = Pos.Y + (int)(Math.Sin(Pos.X) * 20);
+            int y = Pos.Y + (int)(Math.Sin(Pos.X/10) * 20);
             rectangle = new Rectangle(Pos.X, y, Size.Width, Size.Height);
         }
     }
