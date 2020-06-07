@@ -8,31 +8,30 @@ using System.Drawing;
 
 namespace WindowsFormsApp1
 {
-    class BaseObject
+    interface ICollision
     {
-        protected Point Pos;
+        bool Collision(ICollision obj);
+        Rectangle Rect { get; }
+    }
+    abstract class BaseObject : ICollision
+    {
+        public Point Pos;
         protected Point Dir;
         protected Size Size;
-        public BaseObject()
+        public BaseObject(Point pos, Point dir, Size size)
         {
-            Random rand = new Random();
-            Pos = new Point(Game.Width-50, rand.Next(10,Game.Height-10));
-            Dir = new Point(rand.Next(-20, 0), rand.Next(-20, 0));
-            Size = new Size(rand.Next(7, 20), rand.Next(7, 20));
+            if(pos.X<0 || pos.X>Game.Width || pos.Y < 0 || pos.Y > Game.Height)
+            {
+                throw new GameObjectException("Bad position");
+            }
+            Pos = pos;
+            Dir = dir;
+            Size = size;
         }
-        public virtual void Draw()
-        {
-            Game.Buffer.Graphics.DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
-        }
-        public virtual void Update()
-        {
-            Pos.X +=Dir.X;
-            Pos.Y +=Dir.Y;
-            if (Pos.X < 0) Dir.X = -Dir.X;
-            if (Pos.X > Game.Width) Dir.X = -Dir.X;
-            if (Pos.Y < 0) Dir.Y = -Dir.Y;
-            if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
-        }
+        public abstract void Draw();
+        public abstract void Update();
+        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
+        public Rectangle Rect => new Rectangle(Pos, Size);
 
     }
 }

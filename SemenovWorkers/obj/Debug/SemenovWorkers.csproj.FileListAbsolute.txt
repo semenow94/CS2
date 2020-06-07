@@ -1,0 +1,7 @@
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\bin\Debug\SemenovWorkers.exe.config
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\bin\Debug\SemenovWorkers.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\bin\Debug\SemenovWorkers.pdb
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\obj\Debug\SemenovWorkers.csprojAssemblyReference.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\obj\Debug\SemenovWorkers.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\obj\Debug\SemenovWorkers.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWorkers\obj\Debug\SemenovWorkers.pdb

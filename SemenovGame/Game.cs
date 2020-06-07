@@ -14,8 +14,34 @@ namespace WindowsFormsApp1
         public static BufferedGraphics Buffer;
         // Свойства
         // Ширина и высота игрового поля
-        public static int Width { get; set; }
-        public static int Height { get; set; }
+        static private int width;
+        static private int height;
+        public static int Width
+        {
+            get
+            {
+                return width;
+            }
+            set
+            {
+                if (value > 1000 || value < 0)
+                    throw new ArgumentOutOfRangeException("Bad value");
+                else width = value;
+            }
+        }
+        public static int Height
+        {
+            get
+            {
+                return height;
+            }
+            set
+            {
+                if (value > 1000 || value < 0)
+                    throw new ArgumentOutOfRangeException("Bad value");
+                else height = value;
+            }
+        }
         static Game()
         {
         }
@@ -43,44 +69,52 @@ namespace WindowsFormsApp1
         }
         public static void Draw()
         {
-            // Проверяем вывод графики
-            //Buffer.Graphics.Clear(Color.Black);
-            //Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
-            //Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
-            //Buffer.Render();
-
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _objs)
                 obj.Draw();
+            foreach (Asteroid obj in _asteroids)
+                obj.Draw();
+            _bullet.Draw();
             Buffer.Render();
+
         }
 
         public static void Update()
         {
             foreach (BaseObject obj in _objs)
                 obj.Update();
-        }
-        public static BaseObject[] _objs;
-        public static void Load()
-        {
-            Random random = new Random();
-            _objs = new BaseObject[50];
-            for(int i=0;i<_objs.Length;i++)
+            foreach (Asteroid a in _asteroids)
             {
-                int r=random.Next(0, 3);
-                if(r==0)
-                {
-                    _objs[i] = new BaseObject();
-                }
-                else if(r==1)
-                {
-                    _objs[i] = new Star();
-                }
-                else
-                {
-                    _objs[i] = new Asteroid();
+                a.Update();
+                if (a.Collision(_bullet)) 
+                { 
+                    System.Media.SystemSounds.Hand.Play();
+                    a.OnStart();
+                    _bullet.OnStart();
                 }
             }
+            _bullet.Update();
+        }
+        public static BaseObject[] _objs;
+        private static Bullet _bullet;
+        private static Asteroid[] _asteroids;
+        public static void Load()
+        {
+            _objs = new BaseObject[30];
+            _asteroids = new Asteroid[3];
+            var rnd = new Random();
+            for (var i = 0; i < _objs.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _objs[i] = new Star(new Point(Game.Width, rnd.Next(0+3, Game.Height-3)), new Point(-r, r), new Size(3, 3));
+            }
+            for (var i = 0; i < _asteroids.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _asteroids[i] = new Asteroid(new Point(Game.Width, rnd.Next(0+r, Game.Height-r)), new Point(-r / 5, r), new Size(r, r));
+            }
+            _bullet = new Bullet(new Point(0, _asteroids[0].Pos.Y), new Point(5, 0), new Size(4, 1));
+
         }
     }
 }

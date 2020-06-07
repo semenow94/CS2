@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 {
     class Star : BaseObject
     {
-        public Star() : base()
+        public Star(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
         }
         public override void Draw()
