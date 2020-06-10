@@ -1,0 +1,4 @@
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy
+Ship was healed. Current energy is 100

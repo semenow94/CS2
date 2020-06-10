@@ -1,0 +1,9 @@
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\bin\Release\WindowsFormsApp1.exe.config
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\bin\Release\WindowsFormsApp1.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\bin\Release\WindowsFormsApp1.pdb
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\obj\Release\SemenovGame.csprojAssemblyReference.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\obj\Release\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\obj\Release\SemenovGame.csproj.GenerateResource.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\obj\Release\SemenovGame.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\obj\Release\WindowsFormsApp1.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovGame\obj\Release\WindowsFormsApp1.pdb

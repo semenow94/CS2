@@ -9,9 +9,11 @@ namespace WindowsFormsApp1
 {
     class Bullet : BaseObject
     {
-        public Bullet(Point pos, Point dir, Size size) : base(pos, dir, size)
+        public Bullet(Point pos)
         {
-            
+            Pos = pos;
+            Size = new Size(4, 1);
+
         }
         public override void Draw()
         {
@@ -19,13 +21,13 @@ namespace WindowsFormsApp1
         }
         public override void Update()
         {
-            Pos.X +=3;
+            Pos.X +=5;
         }
-        public void OnStart()
-        {
-            Pos.X = 0;
-            Update();
-        }
+        //public void OnStart()
+        //{
+        //    Pos.X = 0;
+        //    Update();
+        //}
 
     }
 }

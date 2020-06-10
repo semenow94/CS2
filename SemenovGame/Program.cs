@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             Form form = new Form
             {
-                Width = 1000,//Исключение не выбрасывается, т.к. рабочая область будет меньше 1000
+                Width = 900,
                 Height = 900
             };
             Game.Init(form);

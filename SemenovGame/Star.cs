@@ -9,8 +9,11 @@ namespace WindowsFormsApp1
 {
     class Star : BaseObject
     {
-        public Star(Point pos, Point dir, Size size) : base(pos, dir, size)
+        public Star()
         {
+            Pos = new Point(Game.Width, rand.Next(30, Game.Height - 3));
+            Dir.X = rand.Next(5, 30);
+            Size = new Size(3, 3);
         }
         public override void Draw()
         {
@@ -19,8 +22,8 @@ namespace WindowsFormsApp1
         }
         public override void Update()
         {
-            Pos.X +=Dir.X;
-            if (Pos.X < 0) Pos.X = Game.Width + Size.Width;
+            Pos.X -=Dir.X;
+            if (Pos.X < 0) Pos.X = Game.Width - Size.Width;
         }
     }
 }
