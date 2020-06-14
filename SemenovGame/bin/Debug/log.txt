@@ -1,4 +1,22 @@
+Ship take 7 damage. Current energy is 93
+Ship take 6 damage. Current energy is 87
 Asteroid destroy
 Asteroid destroy
 Asteroid destroy
-Ship was healed. Current energy is 100
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy
+Ship take 1 damage. Current energy is 86
+Asteroid destroy
+Ship take 2 damage. Current energy is 84
+Asteroid destroy
+Ship take 4 damage. Current energy is 80
+Ship was healed. Current energy is 90
+Ship take 7 damage. Current energy is 83
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy
+Asteroid destroy

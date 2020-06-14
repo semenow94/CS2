@@ -1,0 +1,7 @@
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\bin\Debug\SemenovLn4T2.exe.config
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\bin\Debug\SemenovLn4T2.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\bin\Debug\SemenovLn4T2.pdb
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\obj\Debug\SemenovLn4T2.csprojAssemblyReference.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\obj\Debug\SemenovLn4T2.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\obj\Debug\SemenovLn4T2.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovLn4T2\obj\Debug\SemenovLn4T2.pdb
