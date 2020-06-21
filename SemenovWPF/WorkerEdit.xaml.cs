@@ -20,12 +20,12 @@ namespace SemenovWPF
     /// </summary>
     public partial class WorkerEdit : Window
     {
-        public ObservableCollection<string> Departments { get; set; }
+        public ObservableCollection<Department> Departments { get; set; }
         public ObservableCollection<Employee> workers;
-        public WorkerEdit(ObservableCollection<Employee> _workers)
+        public WorkerEdit(ObservableCollection<Employee> _workers, ObservableCollection<Department> _departments)
         {
             workers = _workers;
-            Departments = Department.departments;
+            Departments = _departments;
             DataContext = this;
             InitializeComponent();
             Name.Text = "";
@@ -34,16 +34,16 @@ namespace SemenovWPF
             Workerid.Text = "-1";
             AddRew.Content = "Добавить";
         }
-        public WorkerEdit(ObservableCollection<Employee> _workers,string name, string surname, int age, int depid, int id)
+        public WorkerEdit(ObservableCollection<Employee> _workers, ObservableCollection<Department> _departments, int id)
         {
             workers = _workers;
-            Departments = Department.departments;
+            Departments = _departments;
             DataContext = this;
             InitializeComponent();
-            Name.Text = name;
-            Surname.Text = surname;
-            Age.Text = age.ToString();
-            DepartmentName.SelectedIndex=depid;
+            Name.Text = _workers[id].Name;
+            Surname.Text = _workers[id].Surname;
+            Age.Text = _workers[id].Age.ToString();
+            DepartmentName.SelectedItem= _workers[id].Department;
             Workerid.Text = id.ToString();
             AddRew.Content = "Изменить";
         }
@@ -61,11 +61,11 @@ namespace SemenovWPF
                 workers[id].Name = Name.Text;
                 workers[id].Surname = Surname.Text;
                 workers[id].Age = Convert.ToInt32(Age.Text);
-                workers[id].DepartmentId = DepartmentName.SelectedIndex;
+                workers[id].Department = Departments[DepartmentName.SelectedIndex];
             }
             else
             {
-                workers.Add(new Employee(Name.Text, Surname.Text, DepartmentName.SelectedIndex, Convert.ToInt32(Age.Text)));
+                workers.Add(new Employee(Name.Text, Surname.Text, Departments[DepartmentName.SelectedIndex], Convert.ToInt32(Age.Text)));
             }
             this.Close();
         }

@@ -23,7 +23,7 @@
                             <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="auto">Имя</GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Surname}" Width="auto">Фамилия</GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Age}" Width="auto">Возраст</GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding DepartmentName}" Width="auto">Департамент</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Department}" Width="auto">Департамент</GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -43,7 +43,7 @@
                 <ListView x:Name="listDeps" ItemsSource="{Binding Departments}" Grid.ColumnSpan="2">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="auto">Наименование</GridViewColumn>
+                            <GridViewColumn Width="auto" DisplayMemberBinding="{Binding Name}">Наименование</GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

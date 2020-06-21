@@ -28,11 +28,11 @@ namespace SemenovWPF
     public partial class MainWindow : Window
     {
         public ObservableCollection<Employee> Workers { get; set; }
+        public ObservableCollection<Department> Departments { get; set; }
         readonly List<string> _departments= new List<string>
             {
                 "ИТ", "Бухгалтерия", "Администрация"
             };
-        public ObservableCollection<string> Departments { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -41,18 +41,17 @@ namespace SemenovWPF
         }
         void Init()
         {
-            Departments = Department.departments;
+            Departments = new ObservableCollection<Department>();
             Workers = new ObservableCollection<Employee>();
             Random rand = new Random();
             foreach (string a in _departments)
             {
-                Department.Add(a);
+                Departments.Add(new Department(a));
             }
             for (int i = 0; i < 10; i++)
             {
-                Workers.Add(new Employee("Name" + i, "Surname" + i, rand.Next(0, Department.departments.Count), rand.Next(18, 66)));
+                Workers.Add(new Employee("Name" + i, "Surname" + i, Departments[rand.Next(0, Departments.Count)], rand.Next(18, 66)));
             }
-            Workers.Add(new Employee("Dmitriy", "Semenov", 0, 25));
             DataContext = this;
         }
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -63,13 +62,13 @@ namespace SemenovWPF
 
         private void Dep_Add(object sender, RoutedEventArgs e)
         {
-            DepartmentEdit dep = new DepartmentEdit();
+            DepartmentEdit dep = new DepartmentEdit(Departments);
             dep.ShowDialog();
         }
 
         private void Worker_Add(object sender, RoutedEventArgs e)
         {
-            WorkerEdit work = new WorkerEdit(Workers);
+            WorkerEdit work = new WorkerEdit(Workers,Departments);
             work.ShowDialog();
         }
 
@@ -86,7 +85,7 @@ namespace SemenovWPF
             int i = listWorkers.SelectedIndex;
             if (i>=0)
             {
-                WorkerEdit work = new WorkerEdit(Workers,Workers[i].Name, Workers[i].Surname, Workers[i].Age, Workers[i].DepartmentId, i);
+                WorkerEdit work = new WorkerEdit(Workers,Departments, i);
                 work.ShowDialog();
                 listWorkers.ItemsSource = Workers;
             }
@@ -97,9 +96,9 @@ namespace SemenovWPF
             int i = listDeps.SelectedIndex;
             if(i>=0)
             {
-                DepartmentEdit dep = new DepartmentEdit(i);
+                DepartmentEdit dep = new DepartmentEdit(Departments,i);
                 dep.ShowDialog();
-                foreach(Employee a in Workers) a.DepartmentId=a.DepartmentId;//Вполне рабочий костыль =D
+                foreach (Employee a in Workers) a.OnPropertyChanged("Department"); //Вполне рабочий костыль =D
             }
         }
     }

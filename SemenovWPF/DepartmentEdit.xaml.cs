@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,19 +20,22 @@ namespace SemenovWPF
     /// </summary>
     public partial class DepartmentEdit : Window
     {
-        public DepartmentEdit()
+        readonly ObservableCollection<Department> Departments;
+        public DepartmentEdit(ObservableCollection<Department> _departments)
         {
             InitializeComponent();
+            Departments = _departments;
             DepId.Text = "-1";
             DepEdit.Content = "Добавить";
             DepName.Text = "";
         }
-        public DepartmentEdit(int id)
+        public DepartmentEdit(ObservableCollection<Department> _departments,int id)
         {
             InitializeComponent();
+            Departments = _departments;
             DepId.Text = id.ToString();
             DepEdit.Content = "Изменить";
-            DepName.Text = Department.departments[id];
+            DepName.Text = Departments[id].ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,11 +48,11 @@ namespace SemenovWPF
             int id = Convert.ToInt32(DepId.Text);
             if(id>=0)
             {
-                Department.departments[id] = DepName.Text;
+                Department.ReWrite(Departments, id, DepName.Text);
             }
             else
             {
-                Department.Add(DepName.Text);
+                Department.Add(Departments,DepName.Text);
             }
             this.Close();
         }

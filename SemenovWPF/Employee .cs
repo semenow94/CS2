@@ -12,9 +12,8 @@ namespace SemenovWPF
     {
         string name;
         string surname;
-        int departmentId;
         int age;
-        string departmentName;
+        Department department;
         public string Name
         {
             get { return name; }
@@ -33,29 +32,18 @@ namespace SemenovWPF
                 OnPropertyChanged("Surname");
             }
         }
-        public string DepartmentName
+        public Department Department
         {
             get
             {
-                return departmentName;
+                return department;
             }
             set
             {
-                departmentName= value;
-                OnPropertyChanged("DepartmentName");
+                department= value;
+                OnPropertyChanged("Department");
             }
         }
-        public int DepartmentId
-        {
-            get { return departmentId; }
-            set
-            {
-                departmentId = value;
-                DepartmentName = Department.departments[Convert.ToInt32(value)];
-                OnPropertyChanged("DepartmentId");
-            }
-        }
-
         public int Age
         {
             get { return age; }
@@ -65,11 +53,11 @@ namespace SemenovWPF
                 OnPropertyChanged("Age");
             }
         }
-        public Employee(string name, string surname, int department, int age)
+        public Employee(string name, string surname, Department department, int age)
         {
             Name = name;
             Surname = surname;
-            DepartmentId = department;
+            Department = department;
             Age = age;
         }
         public event PropertyChangedEventHandler PropertyChanged;
