@@ -1,0 +1,31 @@
+CREATE TABLE [dbo].[Departments] (
+    [Id]      INT            IDENTITY (1, 1) NOT NULL,
+    [depname] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+SET IDENTITY_INSERT [dbo].[Departments] ON
+INSERT INTO [dbo].[Departments] ([Id], [depname]) VALUES (1, N'Администрация')
+INSERT INTO [dbo].[Departments] ([Id], [depname]) VALUES (2, N'ИТ')
+INSERT INTO [dbo].[Departments] ([Id], [depname]) VALUES (3, N'Бухгалтерия')
+INSERT INTO [dbo].[Departments] ([Id], [depname]) VALUES (4, N'Прочие')
+SET IDENTITY_INSERT [dbo].[Departments] OFF
+
+
+CREATE TABLE [dbo].[Workers] (
+    [Id]         INT            IDENTITY (1, 1) NOT NULL,
+    [surname]    NVARCHAR (MAX) NOT NULL,
+    [name]       NVARCHAR (MAX) NOT NULL,
+    [age]        INT            NOT NULL,
+    [Department] INT            NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_EmployeeTable_DepartmentTable] FOREIGN KEY ([Department]) REFERENCES [dbo].[Departments] ([Id])
+);
+
+SET IDENTITY_INSERT [dbo].[Workers] ON
+INSERT INTO [dbo].[Workers] ([Id], [surname], [name], [age], [Department]) VALUES (1, N'Семенов', N'Дмитрий Юрьевич', 25, 2)
+INSERT INTO [dbo].[Workers] ([Id], [surname], [name], [age], [Department]) VALUES (2, N'Иванов', N'Иван', 20, 1)
+INSERT INTO [dbo].[Workers] ([Id], [surname], [name], [age], [Department]) VALUES (3, N'Петров', N'Иван', 12, 3)
+INSERT INTO [dbo].[Workers] ([Id], [surname], [name], [age], [Department]) VALUES (5, N'das', N'Alex', 48, 1)
+INSERT INTO [dbo].[Workers] ([Id], [surname], [name], [age], [Department]) VALUES (6, N'sda', N'asd', 45, 3)
+INSERT INTO [dbo].[Workers] ([Id], [surname], [name], [age], [Department]) VALUES (8, N'sdf', N'sdf12', 12, 2)
+SET IDENTITY_INSERT [dbo].[Workers] OFF

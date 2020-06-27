@@ -1,0 +1,17 @@
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\bin\Debug\SemenovWPFDB.exe.config
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\bin\Debug\SemenovWPFDB.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\bin\Debug\SemenovWPFDB.pdb
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.csprojAssemblyReference.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\MainWindow.g.cs
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\App.g.cs
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB_MarkupCompile.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB_MarkupCompile.lref
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\MainWindow.baml
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.g.resources
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.Properties.Resources.resources
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.csproj.GenerateResource.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.exe
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\SemenovWPFDB.pdb
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\EditWorker.g.cs
+C:\Users\Дмитрий\Documents\progs\CS2\SemenovWPFDB\obj\Debug\EditWorker.baml
